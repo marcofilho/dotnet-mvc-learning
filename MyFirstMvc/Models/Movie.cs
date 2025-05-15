@@ -33,7 +33,7 @@ namespace MyFirstMvc.Models
         [Required(ErrorMessage = "Invalid price format")]
         [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
-"
+
         [Required(ErrorMessage = "Rating is required")]
         [RegularExpression(@"^[0-5]*$", ErrorMessage = "Only numbers between 0 and 5 are allowed")]
         public int Rating { get; set; }
