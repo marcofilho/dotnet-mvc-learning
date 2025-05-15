@@ -5,15 +5,6 @@ namespace MyFirstMvc.Models
 {
     public class Movie
     {
-        public Movie(string title, DateTime releaseDate, string genre, decimal price, int rating)
-        {
-            Title = title;
-            ReleaseDate = releaseDate;
-            Genre = genre;
-            Price = price;
-            Rating = rating;
-        }
-
         [Key]
         public int Id { get; set; }
 

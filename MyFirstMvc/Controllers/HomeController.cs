@@ -15,12 +15,26 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        var movie = new Movie
+        {
+            Title = "Inception",
+            ReleaseDate = DateTime.Now,
+            Genre = null,
+            Price = 20000,
+            Rating = 10
+        };
+
+        return RedirectToAction("Privacy", movie);
     }
 
-    public IActionResult Privacy()
+    public IActionResult Privacy(Movie movie)
     {
-        return View();
+        if (ModelState.IsValid)
+        {
+            return RedirectToAction("Index");
+        }
+
+        return View(movie);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
