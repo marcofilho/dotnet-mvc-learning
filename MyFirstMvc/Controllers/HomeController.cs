@@ -34,6 +34,11 @@ public class HomeController : Controller
             return RedirectToAction("Index");
         }
 
+        foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+        {
+            Console.WriteLine(error.ErrorMessage);
+        }
+
         return View(movie);
     }
 

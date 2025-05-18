@@ -51,3 +51,4 @@ _ReSharper*/
 Thumbs.db
 
 # End of .gitignore
+.fake
